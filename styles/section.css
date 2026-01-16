@@ -42,7 +42,7 @@
 .subtitle__section {
     width: 960px;
     color: var(--color);
-    font: 400 20px/1.4 "Inter", sans-serif;
+    font: 400 24px/1.4 "Inter", sans-serif;
     text-align: center;
     letter-spacing: -0.5px;
 }
@@ -202,6 +202,8 @@ footer {
     text-align: left;
     max-width: 210px;
     height: 52px;
+    
+    
 }
 
 .input::placeholder {
