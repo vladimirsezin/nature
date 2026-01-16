@@ -1,31 +1,25 @@
-// Бургер меню
-const burger = document.querySelector('.navbar__burger');
-const navLinks = document.querySelector('.navbar__links');
+const menu = document.getElementById("burger");
+const burgerMenu = document.getElementById("burger__menu");
+const header = document.getElementById("header");
 
-burger.addEventListener('click', function() {
-    
-    this.classList.toggle('active');
+menu.addEventListener("click", function () {
+  // Переключаем активный класс
+  burgerMenu.classList.toggle("active");
+  menu.classList.toggle("active");
 
-    navLinks.classList.toggle('active');
-
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  // Меняем фон header
+  if (burgerMenu.classList.contains("active")) {
+    header.style.backgroundImage = "none";
+    header.style.backgroundColor = "#4C3F3F";
+  } else {
+    header.style.backgroundImage = "";
+    header.style.backgroundColor = "";
+  }
 });
-
-
-document.querySelectorAll('.nav__link a').forEach(link => {
-    link.addEventListener('click', function() {
-      
-        burger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = ''; 
-    });
-});
-
-
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 640) {
-        burger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+document.querySelectorAll(".navbar__link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    target.scrollIntoView({ behavior: "smooth" });
+  });
 });

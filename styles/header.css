@@ -1,92 +1,123 @@
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top:15px;
+header {
+  height: 465px;
+  background-image: url("../images/newBG2.jpg");
+  background-size: cover;
+  background-position: center;
+  max-height: 465px;
+  max-width: 100vw;
+  object-fit: contain;
 }
-
-.header__title {
-    color: var(--color);
-    font-size: 28px;
-    
-}
-
 
 .navbar__links {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+  padding: 13px 0 0 15px;
+  display: flex;
+  justify-content: start;
+  
+  gap: 15px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 26px;
+  z-index: 2;
 }
 
-.nav__link {
-    text-decoration: none;
-    list-style-type: none;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.6;
-    letter-spacing: -0.4px;
-    color: var(--color);
+.navbar__link {
+  /* Исправьте название класса */
+  text-decoration: none;
+  background: linear-gradient(45deg, #43362d, #7f4b3a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero {
+  position: relative;
+  margin-top: 50px;
+}
+.hero__title {
+  position: relative;
+  text-align: center;
+  font-family: "Solway", serif;
+  font-size: 58px;
+  background: linear-gradient(to bottom, #573923, #a99896);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 11px 0;
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+  padding: 0 15px;
 }
 
-
+.hero__subtitle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sofia", cursive;
+  font-size: 36px;
+  background-color: #4c3f3f;
+  color: #ffffff;
+  height: 161px;
+  border-radius: 5px;
+  padding: 0 15px;
+  text-align: center;
+}
 .navbar__burger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    width: 30px;
-    height: 40px;
-    cursor: pointer;
-    position: relative;
-    z-index: 1000;
-}
+  margin: 0;
+  display: none;
 
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
 .navbar__burger span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  transition: all 0.3s ease;
+  transition: 0.3s;
+  border-radius: 2px;
 }
-.navbar__burger.active span {
-    
-    left:10px;
-    width:45px;
-    transform: scaleX(1.4); 
-    height: 4px; 
-    transform-origin: center;
+#burger__menu {
+  padding:30px;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
 }
-
-
-
-
-.icons {
-    display: flex;
-    flex-wrap: nowrap;
+#burger.active span {
+  background: #fff;
 }
 
-#search, #heart, #bag {
-    width: 20px;
-    height: 20px;
-}
-.navbar__links.active {
-    display: flex !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--bg-color);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    z-index: 999;
+#burger__menu.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 40px; /* отступ от верха */
+  left: 0;
+  width: 100%;
+  background: #4c3f3f !important; /* ваш цвет фона */
+  padding: 20px;
+  z-index: 1000;
+  gap: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.navbar__links.active .nav__link {
-    font-size: 48px;
+#burger__menu.active .navbar__link {
+  display: block !important;
+  padding: 15px 0;
+  text-decoration: none;
+  color: white !important; /* белый текст для контраста */
+
+  font-size: 36px;
+  text-align: center;
+  -webkit-text-fill-color: white !important; /* переопределяем градиент */
+  background: none !important; /* убираем градиент */
+}
+
+#burger__menu.active .navbar__link:last-child {
+  border-bottom: none;
 }
